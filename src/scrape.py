@@ -23,7 +23,7 @@ class Image:
             if os.path.exists(self.folder):
                 print("It already exists")
 
-    def parsing_content(self):
+    def parsing_content(self):         
         response = requests.get(self.url)
         try:
             response.raise_for_status()
