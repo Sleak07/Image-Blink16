@@ -44,3 +44,10 @@ class Image:
                 with open(f"{self.folder}/{img_name}.jpg", "wb") as handler:
                     handler.write(img_data)
                 print(f"{img_name} saved successfully in {self.folder}")
+
+if __name__ == "__main__":
+    url ="https://unsplash.com/s/photos/yellow-flowers"
+    folder = "Image Folder"
+    image = Image(url, folder)
+    image.parsing_content()
+    image.saving_images()
