@@ -47,7 +47,7 @@ class Image:
 
 if __name__ == "__main__":
     url ="https://unsplash.com/s/photos/yellow-flowers"
-    folder = "Image Folder"
+    folder = "Image_folder"
     image = Image(url, folder)
     image.parsing_content()
     image.saving_images()
