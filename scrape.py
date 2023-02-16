@@ -1,4 +1,4 @@
-# for sending reqests to the server
+# for sending requests to the server
 import requests
 
 # for parsing out the html response
@@ -23,7 +23,6 @@ class Image:
             if os.path.exists(self.folder):
                 print("It already exists")
 
-
     def parsing_content(self):
         response = requests.get(self.url)
         try:
@@ -31,5 +30,9 @@ class Image:
 
         except Exception as e:
             print(f"There was an error:{e}")
+        self.soup = BeautifulSoup(response.text, "lxml")
+        return self.soup
 
+    def saving_images(self):
+        image = self.soup.find_all("img")
         
